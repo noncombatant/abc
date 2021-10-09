@@ -5,12 +5,8 @@ INSTALL_DIR = $(HOME)/abc
 libs: b
 	BBIN_DIR=. BLIB_DIR=. ./abc -c brt.s lib.b
 
-b: b0.o b1.o
-	$(CC) b0.o b1.o -o b
-
-b0.o: b0.c b.h
-
-b1.o: b1.c b.h
+b: b.h b0.c b1.c
+	$(CC) b0.c b1.c -o b
 
 install: b abc libs
 	mkdir -p $(INSTALL_DIR)/bin
