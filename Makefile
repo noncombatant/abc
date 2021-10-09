@@ -1,4 +1,4 @@
-CFLAGS=-Wall -Wextra
+CFLAGS=-Wall -Wextra -fPIE
 b: b0.o b1.o
 	cc b0.o b1.o -o b
 b0.o: b0.c b.h

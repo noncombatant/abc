@@ -14,6 +14,27 @@ int	peeksym = -1, peeksym2 = -1;;
 int	contlab = -1;
 int	brklab = -1;
 
+struct	hshtab *bsym;
+struct	tnode **cp;
+char	ctab[128];
+int	cval;
+int	deflab;
+int	eof;
+struct	hshtab hshtab[HSHSIZ];
+int	hshused;
+int	isn;
+int	nerror;
+int	ospace[OSSIZ];
+struct	hshtab *paraml, *parame;
+int	peekc;
+int	retlab;
+FILE	*sbufp;
+int	stack;
+int	*space;
+struct	swtab swtab[SWSIZ];
+struct	swtab *swp;
+char	symbuf[NCPS+1];
+
 void
 init(char *s, int val)
 {

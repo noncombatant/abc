@@ -1,5 +1,26 @@
 #include "b.h"
 
+extern struct	hshtab *bsym;
+extern struct	tnode **cp;
+extern char	ctab[128];
+extern int	cval;
+extern int	deflab;
+extern int	eof;
+extern struct	hshtab hshtab[HSHSIZ];
+extern int	hshused;
+extern int	isn;
+extern int	nerror;
+extern int	ospace[OSSIZ];
+extern struct	hshtab *paraml, *parame;
+extern int	peekc;
+extern int	retlab;
+extern FILE	*sbufp;
+extern int	stack;
+extern int	*space;
+extern struct	swtab swtab[SWSIZ];
+extern struct	swtab *swp;
+extern char	symbuf[NCPS+1];
+
 /*
  * Code generation (x86 assembly)
  */
