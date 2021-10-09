@@ -15,6 +15,8 @@ Ritchie.
 a presumably earlier variant of B, which is slightly different from the one
 described above. ABC cannot understand it, but a compatibility mode is possible
 (the differences are minor).
+* Examples of B programs are in the `examples` directory. They are mostly from
+Brian Kernighan’s tutorial.
 
 ## Implementation
 
@@ -72,9 +74,6 @@ To generate only the assembly code:
 ```sh
 abc -S file1.b [file2.b ...]
 ```
-
-Examples of B programs are in the `examples` directory. They are mostly from
-Brian Kernighan’s tutorial.
 
 ## Bugs
 
