@@ -60,17 +60,24 @@ printn(number, base) {
 	putchar(char("0123456789ABCDEF", number % base));
 }
 
-putnumb(n) {
-	printn(n,10);
+/*
+Prints `number` (represented in base 10) to the standard output file, and a
+newline.
+*/
+putnumb(number) {
+	printn(number, 10);
 	putchar('*n');
 }
 
-putstr(s) {
+/*
+Prints `string` to the standard output file.
+*/
+putstr(string) {
 	auto c, i;
-
 	i = 0;
-	while ((c = char(s,i++)) != '*e')
+	while ((c = char(string, i++)) != '*e') {
 		putchar(c);
+	}
 }
 
 getstr(s) {
