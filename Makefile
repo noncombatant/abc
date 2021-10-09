@@ -1,10 +1,11 @@
-CFLAGS=-Wall -Wextra -fPIE
+CC = clang
+CFLAGS = -Wall -Wextra -fPIE
 
 libs: b
 	./abc -c brt.s lib.b
 
 b: b0.o b1.o
-	cc b0.o b1.o -o b
+	$(CC) b0.o b1.o -o b
 
 b0.o: b0.c b.h
 
