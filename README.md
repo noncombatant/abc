@@ -35,8 +35,8 @@ also handles assembling and linking).
 The installation requires a little configuration.
 
 Before you can use ABC, adjust the `INSTALL_DIR` variable in the Makefile to
-point to a palce to install ABC. It **should not** be the same place as this Git
-checkout. By default, `INSTALL_DIR` is `$HOME/abc`.
+point to a place to install ABC. It **should not** be the same place as your
+checkout of this Git repository. By default, `INSTALL_DIR` is `$HOME/abc`.
 
 Then type
 
@@ -47,7 +47,7 @@ make install
 which compiles the compiler `b`, installs the `abc` frontend, and compiles the B
 runtime support files.
 
-Now, include your new B compiler in your `$PATH`:
+Now, include your shiny new B compiler in your `$PATH`:
 
 ```sh
 export PATH="$PATH:$HOME/abc/bin"
@@ -61,13 +61,13 @@ To compile and link a B program, simply type
 abc -o outfile file1.b [file2.b ...]
 ```
 
-If you want to compile and assemble only:
+If you want to compile and assemble only, but not link:
 
 ```sh
 abc -c file1.b [file2.b ...]
 ```
 
-To generate only the assembly:
+To generate only the assembly code:
 
 ```sh
 abc -S file1.b [file2.b ...]
@@ -79,9 +79,9 @@ Brian Kernighan’s tutorial.
 ## Bugs
 
 Since command line parameters aren’t passed word-aligned, B can’t handle them
-easily. brt.s copies the strings to another location and aligns them, the space
-is not dynamically allocated however and only 256 bytes are available by
-default.
+easily. brt.s copies the strings to another location and aligns them. The space
+is not dynamically allocated, however, and only 256 bytes are available by
+default to store them.
 
 The library is incomplete but has some of the most important functions.
 
