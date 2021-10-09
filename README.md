@@ -1,6 +1,6 @@
 # A B Compiler
 
-`abc` is a compiler for the [B Programming
+ABC is a compiler for the [B Programming
 Language](http://en.wikipedia.org/wiki/B_(programming_language)) that targets
 x86\_32 processors. It is currently tested under Linux but should work (or at
 least be easily ported) to other UNIX-like systems. The code is based on [an
@@ -35,23 +35,26 @@ also handles assembling and linking).
 
 The installation requires a little configuration.
 
-Before you can use `abc`, set the `BDIR` environment variable to the
-directory of the B compiler. For example, if the current working directory is
-your git checkout of `abc`:
+Before you can use ABC, adjust the `INSTALL_DIR` variable in the Makefile to
+point to a palce to install ABC. It **should not** be the same place as this Git
+checkout. By default, `INSTALL_DIR` is `$HOME/abc`.
 
-```sh
-export BDIR=$(pwd)
-```
-
-In the Makefile, change the directory of the `install` rule to wherever you want
-your `abc` file to reside. (The default is `$HOME/bin`.) Then type
+Then type
 
 ```sh
 make install
 ```
 
 which compiles the compiler `b`, installs the `abc` frontend, and compiles the B
-runtime and library (brt.o and lib.o).
+runtime support files.
+
+Now, include your new B compiler in your `$PATH`:
+
+```sh
+export PATH="$PATH:$HOME/abc/bin"
+```
+
+(Adjust that command to reflect your actual `$(INSTALL_DIR)/bin`.)
 
 To compile and link a B program, simply type
 
@@ -65,7 +68,7 @@ If you want to compile and assemble only:
 abc -c file1.b [file2.b ...]
 ```
 
-or generate only the assembly:
+To generate only the assembly:
 
 ```sh
 abc -S file1.b [file2.b ...]

@@ -1,7 +1,18 @@
 #!/bin/sh
-BDIR="$HOME/abc"
-objs="$BDIR/brt.o $BDIR/lib.o"
-BC="$BDIR/b"
+
+if test -z "$B_DIR"; then
+  B_DIR="$(dirname $(dirname "$0"))"
+fi
+
+if test -z "$BBIN_DIR"; then
+  BBIN_DIR="$B_DIR/bin"
+fi
+if test -z "$BLIB_DIR"; then
+  BLIB_DIR="$B_DIR/lib"
+fi
+
+objs="$BLIB_DIR/brt.o $BLIB_DIR/lib.o"
+BC="$BBIN_DIR/b"
 
 # compile in.b [out.s]
 compile() {
@@ -90,6 +101,6 @@ if [ "$action" = "link" ]; then
 	else
 		out="-o $out"
 	fi
-	ld -m elf_i386 -T $BDIR/link.ld $out $objs $tmpobjs
+	ld -m elf_i386 -T $BLIB_DIR/link.ld $out $objs $tmpobjs
 	rm $tmpobjs
 fi
