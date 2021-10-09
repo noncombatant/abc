@@ -6,7 +6,7 @@ libs: b
 	BBIN_DIR=. BLIB_DIR=. ./abc -c brt.s lib.b
 
 b: b.h b0.c b1.c
-	$(CC) b0.c b1.c -o b
+	$(CC) $(CFLAGS) b0.c b1.c -o b
 
 install: b abc libs
 	mkdir -p $(INSTALL_DIR)/bin
