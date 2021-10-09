@@ -97,46 +97,55 @@ getstr(string) {
 	return (string);
 }
 
-printf(fmt, x1,x2,x3,x4,x5,x6,x7,x8,x9) {
-	extrn printn, char, putchar;
+/*
+Prints the given string `format` to the standard output file, but with certain
+format specifiers replaced with representations of the positional arguments.
+
+The available format specifiers are:
+
+  %d  Print the argument as a decimal number.
+	%o  Print the argument as an octal number.
+	%x  Print the argument as a hexadecimal number.
+	%c  Print the argument as a character.
+	%s  Print the argument as a string.
+*/
+printf(format, x1, x2, x3, x4, x5, x6, x7, x8, x9) {
 	auto adx, x, c, i, j;
 
 	i = 0;
 	adx = &x1;
 loop:
-	while((c=char(fmt,i++)) != '%') {
-		if(c == '*e')
+	while ((c = char(format, i++)) != '%') {
+		if (c == '*e') {
 			return;
+		}
 		putchar(c);
 	}
 	x = *adx++;
-	switch (c = char(fmt,i++)) {
-
+	switch (c = char(format, i++)) {
 	case 'd':
 	case 'o':
-		if(x < 0) {
+		if (x < 0) {
 			x = -x;
 			putchar('-');
 		}
-		printn(x, c=='o'?8:10);
+		printn(x, c == 'o' ? 8 : 10);
 		goto loop;
-
 	case 'x':
-		if(x < 0) {
+		if (x < 0) {
 			x = -x;
 			putchar('-');
 		}
 		printn(x, 16);
 		goto loop;
-
 	case 'c':
 		putchar(x);
 		goto loop;
-
 	case 's':
 		j = 0;
-		while((c=char(x,j++)) != '*e')
+		while ((c = char(x, j++)) != '*e') {
 			putchar(c);
+		}
 		goto loop;
 	}
 	putchar('%');
@@ -144,4 +153,3 @@ loop:
 	adx--;
 	goto loop;
 }
-
