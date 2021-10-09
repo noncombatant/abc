@@ -22,4 +22,4 @@ install: b abc libs
 	as --32 $^ -o $@
 
 clean:
-	rm -f *.o b
+	rm -f *.o b a.out
