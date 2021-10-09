@@ -21,17 +21,20 @@ lchar(string, i, character) {
 	string[(i / 4) * 4] = string[i / 4] & x | character;
 }
 
-putchar(char) {
+/*
+Writes `character` to the standard output file. Returns `character`.
+*/
+putchar(character) {
 	auto c, i;
 
-	c = char;
+	c = character;
 	i = 4;
-	while ((c&0377) != '*e' & (c&0377) != '*0' & i != 0) {
+	while ((c & 0377) != '*e' & (c & 0377) != '*0' & i != 0) {
 		i--;
 		c =>> 8;
 	}
-	write(1, &char, 4-i);
-	return(char);
+	write(1, &character, 4 - i);
+	return(character);
 }
 
 getchar() {
