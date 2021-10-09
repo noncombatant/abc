@@ -24,8 +24,8 @@ the linker are always byte addresses, so pointers to these addresses are
 collectively stored at the end of the .data section and are then converted to
 word addresses at runtime, before `main` is called.
 
-The generated assembly is *very* inefficient; not even constant expressions are
-reduced at compile time. Also I/O is currently not buffered.
+ABC generates **very** inefficient object code; not even constant expressions
+are reduced at compile time. Also I/O is currently not buffered.
 
 ## How To Use
 
