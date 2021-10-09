@@ -34,15 +34,18 @@ putchar(character) {
 		c =>> 8;
 	}
 	write(1, &character, 4 - i);
-	return(character);
+	return (character);
 }
 
+/*
+Returns the next character from the standard input file. Returns '*e' when the
+end of the file is reached.
+*/
 getchar() {
-	auto char;
-
-	char = 0;
-	read(1, &char, 1);
-	return(char);
+	auto c;
+	c = 0;
+	read(1, &c, 1);
+	return (c);
 }
 
 printn(n,b) {
@@ -73,7 +76,7 @@ getstr(s) {
 	while ((c = getchar()) != '*n')
 		lchar(s,i++,c);
 	lchar(s,i,'*e');
-	return(s);
+	return (s);
 }
 
 printf(fmt, x1,x2,x3,x4,x5,x6,x7,x8,x9) {
