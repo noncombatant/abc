@@ -106,7 +106,7 @@ _exit:	.long	1f
 	.text
 	.align 4
 1:	mov	$1,%eax
-	mov	$0,%ebx
+	mov	4(%esp),%ebx
 	int	$0x80
 
 	.globl _write
