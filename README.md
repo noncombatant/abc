@@ -63,6 +63,8 @@ To compile and link a B program, simply type
 abc -o outfile file1.b [file2.b ...]
 ```
 
+(If you don’t provide a `-o` option, the output file will be named a.out.)
+
 If you want to compile and assemble only, but not link:
 
 ```sh
