@@ -11,11 +11,10 @@ Ritchie.
 ## Documentation
 
 * [The Programming Language B](http://9p.io/cm/cs/who/dmr/bintro.html)
-
 * [B Reference by Ken Thompson](http://9p.io/cm/cs/who/dmr/kbman.html) describes
 a presumably earlier variant of B, which is slightly different from the one
-described above. The compiler cannot understand it, but I plan to implement a
-compatibility mode (the differences are minor).
+described above. ABC cannot understand it, but a compatibility mode is possible
+(the differences are minor).
 
 ## Implementation
 
