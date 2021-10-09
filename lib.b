@@ -38,8 +38,8 @@ putchar(character) {
 }
 
 /*
-Returns the next character from the standard input file. Returns '*e' when the
-end of the file is reached.
+Reads and returns the next character from the standard input file. Returns '*e'
+when the end of the file is reached.
 */
 getchar() {
 	auto c;
@@ -49,7 +49,7 @@ getchar() {
 }
 
 /*
-Prints `number` to the standard output file, represented in `base` (where 2 <=
+Writes `number` to the standard output file, represented in `base` (where 2 <=
 `base` <= 16).
 */
 printn(number, base) {
@@ -61,7 +61,7 @@ printn(number, base) {
 }
 
 /*
-Prints `number` (represented in base 10) to the standard output file, and a
+Writes `number` (represented in base 10) to the standard output file, and a
 newline.
 */
 putnumb(number) {
@@ -70,7 +70,7 @@ putnumb(number) {
 }
 
 /*
-Prints `string` to the standard output file.
+Writes `string` to the standard output file.
 */
 putstr(string) {
 	auto c, i;
@@ -98,7 +98,7 @@ getstr(string) {
 }
 
 /*
-Prints the given string `format` to the standard output file, but with certain
+Writes the given string `format` to the standard output file, but with certain
 format specifiers replaced with representations of the positional arguments.
 
 The available format specifiers are:
