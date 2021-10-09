@@ -48,13 +48,16 @@ getchar() {
 	return (c);
 }
 
-printn(n,b) {
-	extrn putchar;
+/*
+Prints `number` to the standard output file, represented in `base` (where 2 <=
+`base` <= 16).
+*/
+printn(number, base) {
 	auto a;
-
-	if (a = n/b)
-		printn(a, b);
-	putchar(char("0123456789ABCDEF", n%b));
+	if (a = number / base) {
+		printn(a, base);
+	}
+	putchar(char("0123456789ABCDEF", number % base));
 }
 
 putnumb(n) {
