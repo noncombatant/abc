@@ -10,7 +10,7 @@ b0.o: b0.c b.h
 
 b1.o: b1.c b.h
 
-install: b abc
+install: b abc libs
 	cp abc $(HOME)/bin
 
 %.o: %.s
