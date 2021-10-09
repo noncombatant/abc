@@ -153,3 +153,18 @@ loop:
 	adx--;
 	goto loop;
 }
+
+/*
+Returns the value of `base` raised to the power of `exponent`. `exponent` must
+be > 1.
+*/
+pow(base, exponent) {
+  auto i, result;
+  i = 0;
+  result = 1;
+  while (i < exponent) {
+    result =* base;
+    i++;
+  }
+  return (result);
+}
