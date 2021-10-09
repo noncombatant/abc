@@ -1,12 +1,24 @@
-char(s, n)
-	return((s[n/4]>>8*(n%4))&0377); /* s[n/4] */
+/*
+Documentation adapted from [Users' Reference to
+B](https://9p.io/cm/cs/who/dmr/kbman.html).
+*/
 
-lchar(s, n, char) {
-	auto i;
-	i = 8*(n%4);
-	char = (char&0377)<<i;
-	i = inv(0377<<i);
-	s[(n/4)*4] = s[n/4]&i | char;
+/*
+Returns the `i`th character of `string`.
+*/
+char(string, i) {
+	return ((string[i / 4] >> 8 * (i % 4)) & 0377); /* string[i / 4] */
+}
+
+/*
+Stores `character` in the `i`th position of `string`.
+*/
+lchar(string, i, character) {
+	auto x;
+	x = 8 * (i % 4);
+	character = (character & 0377) << x;
+	x = inv(0377 << x);
+	string[(i / 4) * 4] = string[i / 4] & x | character;
 }
 
 putchar(char) {
