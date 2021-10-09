@@ -80,13 +80,21 @@ putstr(string) {
 	}
 }
 
-getstr(s) {
-	auto c, i;
+/*
+Reads 1 line of characters from the standard input, and writes it into `string`.
+Returns `string`.
 
-	while ((c = getchar()) != '*n')
-		lchar(s,i++,c);
-	lchar(s,i,'*e');
-	return (s);
+Note that it is impossible to guarantee that `string` will always point to
+enough storage to store all of the input, so this function is unsafe.
+*/
+getstr(string) {
+	auto c, i;
+	while ((c = getchar()) != '*n') {
+		putchar(c);
+		lchar(string, i++, c);
+	}
+	lchar(string, i, '*e');
+	return (string);
 }
 
 printf(fmt, x1,x2,x3,x4,x5,x6,x7,x8,x9) {
