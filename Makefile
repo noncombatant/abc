@@ -2,7 +2,7 @@ CC = clang
 CFLAGS = -Wall -Wextra -fPIE
 INSTALL_DIR = $(HOME)/abc
 
-libs: b
+libs: b brt.s lib.b
 	BBIN_DIR=. BLIB_DIR=. ./abc -c brt.s lib.b
 
 b: b.h b0.c b1.c
