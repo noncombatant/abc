@@ -1,7 +1,9 @@
 main() {
 	auto c;
 read:
-	c= getchar();
+	c = getchar();
 	putchar(c);
-	if(c != '*n')	goto read;
+	if (c != '*n') {
+		goto read;
+	}
 }
