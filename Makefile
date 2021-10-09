@@ -1,7 +1,10 @@
 CFLAGS=-Wall -Wextra -fPIE
+
 b: b0.o b1.o
 	cc b0.o b1.o -o b
+
 b0.o: b0.c b.h
+
 b1.o: b1.c b.h
 
 libs:
@@ -13,3 +16,5 @@ install: b abc
 %.o: %.s
 	as --32 $^ -o $@
 
+clean:
+	rm -f *.o b
