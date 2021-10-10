@@ -155,6 +155,17 @@ loop:
 }
 
 /*
+If the `condition` evaluates to false, calls `printf` with the rest of the
+arguments and exits.
+*/
+assert(condition, format, x1, x2, x3, x4, x5, x6, x7, x8, x9) {
+	if (!condition) {
+		printf(format, x1, x2, x3, x4, x5, x6, x7, x8, x9);
+		exit(1);
+	}
+}
+
+/*
 Returns the value of `base` raised to the power of `exponent`. If `exponent` is
 < 0, returns 0.
 */
