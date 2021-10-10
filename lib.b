@@ -58,6 +58,10 @@ printn(number, base) {
 		number = -number;
 		putchar('-');
 	}
+	if (base < 2 | base > 16) {
+		base = 10;
+	}
+
 	if (a = number / base) {
 		printn(a, base);
 	}
