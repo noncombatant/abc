@@ -1,5 +1,7 @@
 /*
-Documentation adapted from [Users' Reference to
+# B Library
+
+Documentation and functionality adapted from [Users' Reference to
 B](https://9p.io/cm/cs/who/dmr/kbman.html).
 */
 
@@ -153,6 +155,10 @@ loop:
 	adx--;
 	goto loop;
 }
+
+/*
+## Ahistoric (But Handy) Additions
+*/
 
 /*
 If the `condition` evaluates to false, calls `printf` with the rest of the
