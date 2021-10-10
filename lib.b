@@ -155,11 +155,22 @@ loop:
 }
 
 /*
-Returns the value of `base` raised to the power of `exponent`. `exponent` must
-be > 1.
+Returns the value of `base` raised to the power of `exponent`. If `exponent` is
+< 0, returns 0.
 */
 pow(base, exponent) {
   auto i, result;
+
+  if (exponent < 0) {
+    return (0);
+  }
+  if (exponent == 0) {
+    return (1);
+  }
+  if (exponent == 1) {
+    return (base);
+  }
+
   i = 0;
   result = 1;
   while (i < exponent) {
