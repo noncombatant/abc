@@ -54,6 +54,10 @@ Writes `number` to the standard output file, represented in `base` (where 2 <=
 */
 printn(number, base) {
 	auto a;
+	if (number < 0) {
+		number = -number;
+		putchar('-');
+	}
 	if (a = number / base) {
 		printn(a, base);
 	}
@@ -125,17 +129,9 @@ loop:
 	switch (c = char(format, i++)) {
 	case 'd':
 	case 'o':
-		if (x < 0) {
-			x = -x;
-			putchar('-');
-		}
 		printn(x, c == 'o' ? 8 : 10);
 		goto loop;
 	case 'x':
-		if (x < 0) {
-			x = -x;
-			putchar('-');
-		}
 		printn(x, 16);
 		goto loop;
 	case 'c':
